@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
-class SideMenu {
+class SideMenuItem {
   final IconData icon;
   final String title;
 
-  SideMenu({required this.icon, required this.title});
+  SideMenuItem({required this.icon, required this.title});
 }

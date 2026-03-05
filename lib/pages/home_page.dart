@@ -1,29 +1,23 @@
-import 'package:fitness_tracker/widget/dashboard.dart';
-import 'package:fitness_tracker/widget/details.dart';
 import 'package:fitness_tracker/widget/side_menu.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:fitness_tracker/widget/summary.dart';
+import 'package:fitness_tracker/widget/dashboard.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Row(
           children: [
-            //Side Menu
-            Expanded(flex: 3, child: SizedBox(child: SideMenu())),
-            //dashboard
-            Expanded(flex: 8, child: SizedBox(child: Dashboard())),
-            //Details Screen
-            Expanded(flex: 4, child: SizedBox(child: Detais())),
+            //Side menu
+            Expanded(flex: 2, child: SizedBox(child: SideMenu())),
+            //Dashboard
+            Expanded(flex: 7, child: SizedBox(child: Dashboard())),
+            //Summary
+            Expanded(flex: 3, child: SizedBox(child: Summary())),
           ],
         ),
       ),
