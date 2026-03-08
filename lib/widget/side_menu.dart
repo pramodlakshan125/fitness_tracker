@@ -1,6 +1,7 @@
-import 'package:fitness_tracker/constant/colors.dart';
 import 'package:fitness_tracker/data/side_menu_data.dart';
 import 'package:flutter/material.dart';
+
+import 'package:fitness_tracker/constant/colors.dart';
 
 class SideMenu extends StatefulWidget {
   const SideMenu({super.key});
@@ -10,23 +11,24 @@ class SideMenu extends StatefulWidget {
 }
 
 class _SideMenuState extends State<SideMenu> {
-  // state tracker for selected menu item
+  //index tracker
   int selectedIndex = 0;
+  final sideMenuData = SideMenuData();
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 80, horizontal: 20),
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 80),
       color: backgroundColor,
       child: ListView.builder(
-        itemCount: SideMenuData().sideMenu.length,
+        itemCount: sideMenuData.sideMenu.length,
         itemBuilder: (context, index) {
-          return sideMenuList(SideMenuData(), index);
+          return _sideMenuList(sideMenuData, index);
         },
       ),
     );
   }
 
-  Widget sideMenuList(SideMenuData sideMenuData, int index) {
+  Widget _sideMenuList(SideMenuData sideMenuData, int index) {
     return GestureDetector(
       onTap: () {
         setState(() {
@@ -34,32 +36,27 @@ class _SideMenuState extends State<SideMenu> {
         });
       },
       child: Container(
-        margin: EdgeInsets.symmetric(vertical: 5),
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(6)),
-        child: Container(
-          margin: EdgeInsets.symmetric(vertical: 5),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(6),
-            color: selectedIndex == index ? sectionColor : Colors.transparent,
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                Icon(
-                  sideMenuData.sideMenu[index].icon,
+        margin: const EdgeInsets.symmetric(vertical: 5),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(6),
+          color: selectedIndex == index ? sectionColor : Colors.transparent,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              Icon(
+                sideMenuData.sideMenu[index].icon,
+                color: selectedIndex == index ? blackColor : greyColor,
+              ),
+              const SizedBox(width: 20),
+              Text(
+                sideMenuData.sideMenu[index].title,
+                style: TextStyle(
                   color: selectedIndex == index ? blackColor : greyColor,
                 ),
-                SizedBox(width: 20),
-                Text(
-                  sideMenuData.sideMenu[index].title,
-                  style: TextStyle(
-                    color: selectedIndex == index ? blackColor : greyColor,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
