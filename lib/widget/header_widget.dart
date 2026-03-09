@@ -6,18 +6,37 @@ class HeaderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: TextField(
-        style: TextStyle(),
-        decoration: InputDecoration(
-          filled: true,
-          fillColor: cardBgColor,
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.transparent),
+    return Row(
+      children: [
+        Expanded(
+          child: TextField(
+            style: TextStyle(color: greyColor),
+            decoration: InputDecoration(
+              filled: true,
+              fillColor: cardBgColor,
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.transparent),
+              ),
+
+              labelStyle: TextStyle(color: greyColor),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+                borderSide: BorderSide(color: Theme.of(context).primaryColor),
+              ),
+              contentPadding: const EdgeInsets.symmetric(
+                horizontal: 5,
+                vertical: 5,
+              ),
+              hintText: "Search",
+              hintStyle: TextStyle(color: greyColor),
+              prefixIcon: Icon(Icons.search, color: greyColor),
+            ),
           ),
-          labelStyle: TextStyle(color: greyColor),
         ),
-      ),
+      ],
     );
   }
 }
