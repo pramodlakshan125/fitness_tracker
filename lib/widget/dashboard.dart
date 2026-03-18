@@ -1,5 +1,6 @@
 import 'package:fitness_tracker/widget/activity_widget.dart';
 import 'package:fitness_tracker/widget/header_widget.dart';
+import 'package:fitness_tracker/widget/line_chart_widget.dart';
 import 'package:flutter/material.dart';
 
 class Dashboard extends StatefulWidget {
@@ -21,6 +22,8 @@ class _DashboardState extends State<Dashboard> {
             HeaderWidget(),
             SizedBox(height: 15),
             ActivityWidget(),
+            SizedBox(height: 15),
+            LineChartWidget(),
           ],
         ),
       ),
