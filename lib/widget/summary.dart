@@ -1,4 +1,6 @@
+import 'package:fitness_tracker/constant/colors.dart';
 import 'package:fitness_tracker/widget/pie_chart_card.dart';
+import 'package:fitness_tracker/widget/schduled_widget.dart';
 import 'package:fitness_tracker/widget/summary_details.dart';
 import 'package:flutter/material.dart';
 
@@ -27,6 +29,8 @@ class _SummaryState extends State<Summary> {
           ),
           SizedBox(height: 16),
           SummaryDetails(),
+          SizedBox(height: 16),
+          ScheduledWidget(),
         ],
       ),
     );
