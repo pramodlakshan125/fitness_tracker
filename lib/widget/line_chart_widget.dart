@@ -33,17 +33,15 @@ class LineChartWidget extends StatelessWidget {
                 lineTouchData: const LineTouchData(handleBuiltInTouches: true),
 
                 // Required: provide line bar data
-                lineBarsData: data.bottomTitle.entries.first.value != null
-                    ? [
-                        LineChartBarData(
-                          spots: data.spots,
-                          isCurved: true,
-                          color: primaryColor,
-                          barWidth: 3,
-                          dotData: FlDotData(show: false),
-                        ),
-                      ]
-                    : [],
+                lineBarsData: [
+                  LineChartBarData(
+                    spots: data.spots,
+                    isCurved: true,
+                    color: primaryColor,
+                    barWidth: 3,
+                    dotData: FlDotData(show: false),
+                  ),
+                ],
 
                 // Optional: clean up grid
                 gridData: FlGridData(show: false),

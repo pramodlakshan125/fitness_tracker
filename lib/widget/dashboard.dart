@@ -1,4 +1,3 @@
-import 'package:fitness_tracker/data/bar_graph_data.dart';
 import 'package:fitness_tracker/widget/activity_widget.dart';
 import 'package:fitness_tracker/widget/bar_graph_card.dart';
 import 'package:fitness_tracker/widget/header_widget.dart';

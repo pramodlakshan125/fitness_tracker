@@ -8,3 +8,4 @@ const sectionColor = Colors.purpleAccent;
 final limeColor = Colors.blueGrey[900];
 const greyColor = Colors.grey;
 const blackColor = Colors.black;
+const whiteColor = Colors.white;
